@@ -1,0 +1,41 @@
+- Domain:
+    The domain in Domain-Driven Design (DDD) refers to the main area of interest or problem space that your software is addressing.
+    It encompasses all the business logic, rules, and processes related to that problem space.
+    In our project, the main focus is on handling invoices and the factoring process. Therefore, the domain is Invoicing and Factoring.
+
+- Invoicing
+  Invoicing involves creating and managing invoices, which are documents issued by a seller to a buyer. Invoices typically include details such as:
+
+    1- The buyer and seller information.
+    2- The products or services sold.
+    3- The quantities and costs.
+    4- The total amount due.
+    5- Payment terms and due date.
+
+- Factoring
+ Factoring is a financial transaction where a company (the seller or creditor) sells its accounts receivable (invoices) to a third party
+ (the factoring company, e.g., Billie).
+ The factoring company then takes on the responsibility of collecting the money from the buyer (the debtor).
+
+ Here's a more detailed breakdown of the factoring process:Invoice Creation:
+
+    - The seller issues an invoice to the buyer for goods or services provided.
+    - Invoice Sale: The seller sells the invoice to the factoring company. The factoring company buys the invoice, and providing the seller with immediate cash flow.
+    - Collection: The factoring company collects the payment from the buyer when the invoice is due.
+    - Risk Management: Since there is always a risk that a debtor might not pay their invoices, the factoring company (Billie) manages this risk
+      by setting a debtor limit for each company. This limit is the maximum total amount of open invoices a debtor can have.
+      If the debtor's total amount of open invoices reaches this limit, Billie won't accept any more invoices from that debtor.
+
+- Subdomains
+    Subdomains break down the domain into smaller, more manageable areas. For the Invoicing and Factoring domain, we can identify the following subdomains:
+
+    Company Management: Handles the addition and management of companies.
+    Invoice Management: Deals with creating, managing, and marking invoices as paid.
+    Factoring Management: Manages the process of selling invoices to the factoring company (Billie) and checking debtor limits.
+
+- Bounded Contexts
+  Bounded contexts define clear boundaries within a domain where a particular model is defined and applicable. Each subdomain identified above can be considered a bounded context.
+
+  1- Company Management Context: Manages all company-related information and operations.
+  2- Invoice Management Context: Handles all operations related to invoices.
+  3- Factoring Management Context: Manages the factoring process and debtor limits.

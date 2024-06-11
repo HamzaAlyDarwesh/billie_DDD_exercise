@@ -1,0 +1,20 @@
+{
+    "name": "billie/billie_ddd_exercise",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "HamzaAliDarwesh",
+            "email": "hamza.alydarwesh@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9"
+    }
+}

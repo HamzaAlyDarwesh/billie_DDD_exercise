@@ -1,0 +1,55 @@
+*** Here are suggestion to improve solution:
+
+    1- Enhance DTO Usage:
+        Expand the usage of DTOs for more robust data transfer, ensuring that all necessary data is encapsulated and validated.
+
+    2. Improve Error Handling
+        -Exception Handling:
+            Implement custom exceptions and error handling mechanisms to manage different types of errors gracefully.
+            Ensure that meaningful error messages are provided for both the client and server-side operations.
+
+        -Validation:
+            Add comprehensive validation logic for input data in the application services and DTOs.
+            Use a validation library to enforce business rules and constraints.
+
+    3. Optimize Persistence Layer
+        - Database Integration:
+
+            Integrate a real database (e.g., MySQL, PostgreSQL) and implement ORM (e.g., Doctrine) for handling database operations.
+            Refactor the in-memory repositories to use the database for storing and retrieving entities.
+
+    4. Enhance Domain Logic
+        - Domain Events:
+            Implement domain events to handle side effects and asynchronous processes.
+            Use a message broker or event bus to manage and dispatch events.
+        - Refactor Aggregates:
+            Review and refine aggregates to ensure that they encapsulate related entities and business logic appropriately.
+
+    5. Improve Testing Strategy
+        - Unit Testing:
+            Write comprehensive unit tests for all services, repositories, and domain models.
+            Ensure high code coverage and validate different business scenarios.
+
+***  Where did you sacrifice quality for speed?
+
+    1- In-Memory Repositories
+
+        - Description: In-memory repositories were used instead of a persistent storage solution like a database.
+        - Impact: This means data is lost when the application stops, and the implementation does not scale or handle concurrency well.
+        -Reason for Sacrifice: To quickly demonstrate the domain logic and interaction between different parts of the application without dealing
+         with database setup and integration complexities.
+
+
+    2- Basic Error Handling
+
+        - Description: Minimal error handling was implemented, primarily focusing on happy path scenarios.
+        - Impact: This leaves the application vulnerable to unhandled exceptions, leading to potential crashes or incorrect application states.
+        - Reason for Sacrifice: To quickly move through the implementation of core features without getting bogged down in handling all possible edge
+          cases and errors.
+
+     3- Limited Validation
+
+        - Description: Basic validation was implemented for input data, and business rules were not exhaustively enforced.
+        - Impact: This could lead to data integrity issues and business logic errors that are not caught early in the process.
+        - Reason for Sacrifice: To expedite the development process by focusing on primary functionality rather than extensive validation logic.
+
